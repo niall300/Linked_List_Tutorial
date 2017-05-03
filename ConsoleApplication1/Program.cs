@@ -170,7 +170,30 @@ namespace ConsoleApplication1
 
         }
 
+        public Node removeDuplicates(Node head)
+        {
+            //Write your code here
 
+            Node lag = head;
+            Node lead = head.next;
+
+            while (lead != null)
+            {
+                if ((int)lag.data == (int)lead.data)
+                {
+                    lag.next = lead.next;
+                    lead = lag.next;
+                }
+                else
+                {
+                    lag = lag.next;
+                    lead = lead.next;
+                }
+            }
+
+            return head;
+
+        }
     }
        
 
